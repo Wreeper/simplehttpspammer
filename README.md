@@ -1,2 +1,2 @@
 # simplehttpspammer
-A simple HTTP/HTTPS website spammer. USE WITH CAUTION! I AM NOT RESPONSIBLE FOR ANY DAMAGE DONE BY THIS.
+A simple HTTP/HTTPS website spammer, designed for testing and documentation purposes.
