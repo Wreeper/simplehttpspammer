@@ -1,4 +1,4 @@
-Simple HTTP Spammer, developed by https://wreeper.top/ has the intended usage for:
+Simple HTTP Spammer, developed by https://wreeper.top/ and located at the website address https://wreeper.top/simplehttpspammer/, has the intended usage for:
 
 1. Testing
   - See how your hardware reacts after it being overloaded, and try to fix any error that causes the overload.
@@ -9,3 +9,4 @@ Simple HTTP Spammer, developed by https://wreeper.top/ has the intended usage fo
   
 (!) I AM NOT RESPONSIBLE FOR ANY DAMAGE CAUSED BY THIS PROGRAM IN ANY WAY. Responsible is the person that started the attacks. In order to stop the attack, you must close the browser tab or refresh it.
 (!) This software is provided as-is: no support, not any scheduled updates, nothing.
+(!) Should any legal problem arise by the existence of this horrible garbage, this repository should just be suspended or deleted, and that's all. 
