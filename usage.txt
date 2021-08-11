@@ -1,0 +1,11 @@
+Simple HTTP Spammer, developed by https://wreeper.top/ has the intended usage for:
+
+1. Testing
+  - See how your hardware reacts after it being overloaded, and try to fix any error that causes the overload.
+  - See if your hardware is shielded from these types of attacks, see if you are protected or not against HTTP Spam floods.
+
+2. Documentation
+  - Check the source code to see how attacks are being done using GET requests, see how you can protect yourself against these types of attacks.
+  
+(!) I AM NOT RESPONSIBLE FOR ANY DAMAGE CAUSED BY THIS PROGRAM IN ANY WAY. Responsible is the person that started the attacks. In order to stop the attack, you must close the browser tab or refresh it.
+(!) This software is provided as-is: no support, not any scheduled updates, nothing.
