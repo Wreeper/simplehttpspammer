@@ -62,13 +62,12 @@ var emptymsg = '<span style="color:black">#</span>';
 function start() {
 delay = document.getElementById("delay").value;
 host = document.getElementById("host").value;
-spammer = setInterval(serve, delay);
 if (delay == 0) {
 document.getElementById("msg").innerHTML = "No delay specified.";
 } else if (host == 0) {
 document.getElementById("msg").innerHTML = "No host specified.";
 } else {
-
+spammer = setInterval(serve, delay);
 document.getElementById("comandator").innerHTML = '<button onclick="stop()">Stop Attack</button>';
 }
 }
